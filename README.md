@@ -6,6 +6,13 @@ This project showcases a complete **Register-Transfer Level (RTL) hardware archi
 Unlike conventional MCU-based (Arduino/Raspberry Pi) projects that rely on sequential software instructions and pre-built libraries, this system is engineered entirely from scratch using **Verilog HDL**. It demonstrates the ability to directly control hardware peripherals by translating complex timing diagrams and communication protocols (Pulse-Width and Single-Wire) into robust digital logic circuits and Finite State Machines (FSMs). The real-time sensor data is processed and displayed continuously on a 4-digit 7-segment display.
 
 ---
+## Project Motivation & Background
+While interfacing with sensors like the HC-SR04 and DHT11 is commonly done using microcontrollers (e.g., Arduino) and pre-written software libraries, such approaches abstract away the fundamental hardware interactions. 
+
+The primary motivation for this project was to **bridge the gap between software-level abstraction and pure hardware logic.** By designing the communication protocols entirely from scratch at the Register-Transfer Level (RTL), this project aims to:
+* **Deepen understanding of digital circuit design:** Moving beyond simple logic gates to design practical, real-world communication interfaces.
+* **Master hardware-level timing and synchronization:** Handling the exact microsecond-level timing requirements and asynchronous signal issues (metastability) that software often hides.
+* **Build foundational skills for SoC Development:** Demonstrating the ability to create custom hardware IP blocks that could eventually be integrated into larger System-on-Chip architectures.
 
 ## System Architecture & Data Flow
 The architecture is strictly modularized to separate timing generation, signal synchronization, protocol control, and data display.
