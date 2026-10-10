@@ -59,6 +59,7 @@ Manages the sensor's bidirectional Single-Wire protocol.
 1. **Input Synchronization:** In the files in `source/`, the asynchronous `echo` and `dhtio` inputs are sampled directly by the FSMs. The final version shown in `Sensor_project.pdf` adds **2-stage synchronizers and edge detectors** to these inputs (verified in a testbench with an asynchronous input), and `source/` will be updated to that version.
 2. **Division Logic:** The current `/ 58` operator synthesizes a combinational divider. The final version replaces it with **subtraction-based sequential division** in a 5-state FSM (`CALC_1`, `CALC_2`) to avoid timing slack issues.
 
+> **Note:** The final design presented in [`Sensor_project.pdf`](Sensor_project.pdf) uses a 5-state HC-SR04 FSM (`IDLE → TRIG → WAIT → CALC_1 → CALC_2`), 25ms timeouts for both `WAIT` and `CALC_1`, 2-stage input synchronizers, and subtraction-based division. The files in `source/` are an earlier version (4-state FSM, 30ms `WAIT` timeout).
 ---
 
 ##  Development Environment
